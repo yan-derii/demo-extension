@@ -1,0 +1,24 @@
+{
+  "name": "posts-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension that gets posts from the API",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build:parcel": "parcel build popup.html content.js --no-source-maps --no-content-hash",
+    "build:manifest": "cp manifest.json dist/manifest.json",
+    "build:manifest:windows": "copy .\\manifest.json .\\dist\\manifest.json",
+    "build": "npm run build:parcel && npm run build:manifest",
+    "build:windows": "npm run build:parcel && npm run build:manifest:windows"
+  },
+  "author": "Yan Derii",
+  "license": "MIT",
+  "dependencies": {
+    "preact": "^8.5.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
